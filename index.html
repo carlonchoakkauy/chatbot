@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chat-bot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Contenedor principal inspirado en la estructura del boceto -->
+  <main class="contenedor-app">
+    
+    <!-- Cabecera del chat -->
+    <header class="cabecera-chat">
+      <div class="perfil-bot" aria-hidden="true">⚽</div>
+      <div class="info-bot">
+        <h1>chat-bot</h1>
+        <span class="estado-linea">En línea • Fútbol</span>
+      </div>
+    </header>
+
+    <!-- Parte 1 del boceto: Zona de chat (historial de mensajes) -->
+    <section id="zona-de-chat" class="zona-de-chat" aria-live="polite"></section>
+
+    <!-- Parte 2 del boceto: Zona de mensaje (controles, botones e inputs puntuales) -->
+    <section id="zona-de-mensaje" class="zona-de-mensaje"></section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
