@@ -1,0 +1,176 @@
+{
+  "inicio": {
+    "id": "inicio",
+    "reiniciar": true,
+    "texto": "Bienvenido a chat-bot. Antes de comenzar, ¿cómo te llamás?",
+    "input": {
+      "validacion": "textoSinNumeros",
+      "guardarComo": "nombre",
+      "placeholder": "Escribí tu nombre...",
+      "textoBoton": "Continuar",
+      "mensajeError": "Por favor, ingresá un nombre válido sin números ni símbolos.",
+      "siguiente": "menu_principal"
+    },
+    "opciones": []
+  },
+  "menu_principal": {
+    "id": "menu_principal",
+    "recordar": true,
+    "texto": "Un gusto saludarte, {nombre}. ¿Sobre qué tema querés conversar hoy?",
+    "opciones": [
+      {
+        "texto": "¿Hoy vas a la cancha?",
+        "siguiente": "cancha_pregunta"
+      },
+      {
+        "texto": "¿Hoy juega Merentiel?",
+        "siguiente": "merentiel_info"
+      },
+      {
+        "texto": "Ver lo que recordás de mi charla",
+        "siguiente": "ver_memoria",
+        "estilo": "secundario"
+      },
+      {
+        "texto": "Terminar conversación",
+        "siguiente": "despedida",
+        "estilo": "secundario"
+      }
+    ]
+  },
+  "cancha_pregunta": {
+    "id": "cancha_pregunta",
+    "recordar": true,
+    "texto": "Qué lindo plan es ir a la cancha, {nombre}. ¿Vas a ir hoy a alentar?",
+    "opciones": [
+      {
+        "texto": "Sí, hoy voy a la cancha",
+        "siguiente": "cancha_entradas"
+      },
+      {
+        "texto": "No, hoy lo miro desde casa",
+        "siguiente": "cancha_casa"
+      },
+      {
+        "texto": "Volver al menú principal",
+        "siguiente": "menu_principal",
+        "estilo": "secundario"
+      }
+    ]
+  },
+  "cancha_entradas": {
+    "id": "cancha_entradas",
+    "texto": "¡Excelente noticia! No hay nada como el clima del estadio. ¿Con cuántas personas vas a ir hoy?",
+    "input": {
+      "validacion": "numero",
+      "guardarComo": "eleccion",
+      "placeholder": "Cantidad de personas (ej. 2)...",
+      "textoBoton": "Confirmar",
+      "mensajeError": "Ingresá un número válido mayor a cero.",
+      "siguiente": "cancha_confirmado"
+    },
+    "opciones": []
+  },
+  "cancha_confirmado": {
+    "id": "cancha_confirmado",
+    "texto": "Anotado, {nombre}. Que disfruten mucho el partido y tengan una gran jornada de fútbol.",
+    "opciones": [
+      {
+        "texto": "Consultar sobre Merentiel",
+        "siguiente": "merentiel_info"
+      },
+      {
+        "texto": "Volver al menú principal",
+        "siguiente": "menu_principal"
+      },
+      {
+        "texto": "Terminar conversación",
+        "siguiente": "despedida",
+        "estilo": "secundario"
+      }
+    ]
+  },
+  "cancha_casa": {
+    "id": "cancha_casa",
+    "texto": "Mirarlo desde casa con algo rico también es un gran programa, {nombre}. Lo importante es acompañar al equipo.",
+    "opciones": [
+      {
+        "texto": "Consultar sobre Merentiel",
+        "siguiente": "merentiel_info"
+      },
+      {
+        "texto": "Volver al menú principal",
+        "siguiente": "menu_principal"
+      },
+      {
+        "texto": "Terminar conversación",
+        "siguiente": "despedida",
+        "estilo": "secundario"
+      }
+    ]
+  },
+  "merentiel_info": {
+    "id": "merentiel_info",
+    "recordar": true,
+    "texto": "Miguel Merentiel viene entrenando con normalidad y está considerado para ser titular en el ataque. ¿Cómo lo ves para el partido de hoy?",
+    "opciones": [
+      {
+        "texto": "Para mí hoy convierte un gol",
+        "siguiente": "merentiel_respuesta"
+      },
+      {
+        "texto": "Va a ser clave presionando arriba",
+        "siguiente": "merentiel_respuesta"
+      },
+      {
+        "texto": "Volver al menú principal",
+        "siguiente": "menu_principal",
+        "estilo": "secundario"
+      }
+    ]
+  },
+  "merentiel_respuesta": {
+    "id": "merentiel_respuesta",
+    "texto": "Coincido totalmente con tu mirada, {nombre}. Su entrega en cada pelota siempre contagia al resto del equipo.",
+    "opciones": [
+      {
+        "texto": "Charlar sobre ir a la cancha",
+        "siguiente": "cancha_pregunta"
+      },
+      {
+        "texto": "Volver al menú principal",
+        "siguiente": "menu_principal"
+      },
+      {
+        "texto": "Terminar conversación",
+        "siguiente": "despedida",
+        "estilo": "secundario"
+      }
+    ]
+  },
+  "ver_memoria": {
+    "id": "ver_memoria",
+    "texto": "Esto es lo que recordé de nuestra charla hasta ahora, {nombre}:\n{elecciones}",
+    "opciones": [
+      {
+        "texto": "Volver al menú principal",
+        "siguiente": "menu_principal"
+      },
+      {
+        "texto": "Terminar conversación",
+        "siguiente": "despedida",
+        "estilo": "secundario"
+      }
+    ]
+  },
+  "despedida": {
+    "id": "despedida",
+    "texto": "Muchas gracias por conversar conmigo, {nombre}. ¡Que disfrutes del fútbol y hasta la próxima!",
+    "opciones": [
+      {
+        "texto": "Volver a empezar",
+        "siguiente": "inicio"
+      }
+    ]
+  }
+}
