@@ -1,0 +1,220 @@
+/* Variables de diseño simple y limpio */
+:root {
+  --fondo-pagina: #eef2f5;
+  --fondo-chat: #ffffff;
+  --color-primario: #1b4332;
+  --color-secundario: #2d6a4f;
+  --color-acento: #d8f3dc;
+  --burbuja-bot: #f1f3f5;
+  --burbuja-usuario: #1b4332;
+  --texto-oscuro: #1f2933;
+  --texto-claro: #ffffff;
+  --borde: #d9e2ec;
+  --error: #c92a2a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--fondo-pagina);
+  color: var(--texto-oscuro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Estructura principal tipo móvil/tarjeta limpia */
+.contenedor-app {
+  width: 100%;
+  max-width: 440px;
+  height: 88vh;
+  max-height: 760px;
+  background-color: var(--fondo-chat);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.cabecera-chat {
+  background-color: var(--color-primario);
+  color: var(--texto-claro);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.perfil-bot {
+  width: 42px;
+  height: 42px;
+  background-color: var(--texto-claro);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.info-bot h1 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.estado-linea {
+  font-size: 0.8rem;
+  color: var(--color-acento);
+}
+
+/* Zona de chat (burbujas de conversación) */
+.zona-de-chat {
+  flex: 1;
+  padding: 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background-color: var(--fondo-chat);
+}
+
+.mensaje {
+  max-width: 82%;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+.mensaje.bot {
+  align-self: flex-start;
+  background-color: var(--burbuja-bot);
+  color: var(--texto-oscuro);
+  border-bottom-left-radius: 4px;
+}
+
+.mensaje.usuario {
+  align-self: flex-end;
+  background-color: var(--burbuja-usuario);
+  color: var(--texto-claro);
+  border-bottom-right-radius: 4px;
+}
+
+.mensaje.error-sistema {
+  align-self: center;
+  max-width: 95%;
+  background-color: #fff5f5;
+  color: var(--error);
+  border: 1px solid #ffc9c9;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Zona de mensaje (lista de opciones y formularios puntuales) */
+.zona-de-mensaje {
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.btn-opcion {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--fondo-chat);
+  color: var(--color-primario);
+  border: 1.5px solid var(--color-primario);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-opcion:hover {
+  background-color: var(--color-primario);
+  color: var(--texto-claro);
+}
+
+.btn-opcion.secundario {
+  border-color: #627d98;
+  color: #334e68;
+}
+
+.btn-opcion.secundario:hover {
+  background-color: #334e68;
+  color: var(--texto-claro);
+}
+
+/* Formulario puntual con input y validación */
+.form-dato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fila-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.campo-dato {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.campo-dato:focus {
+  border-color: var(--color-primario);
+}
+
+.btn-enviar-dato {
+  padding: 0.7rem 1.1rem;
+  background-color: var(--color-primario);
+  color: var(--texto-claro);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-enviar-dato:hover {
+  background-color: var(--color-secundario);
+}
+
+.texto-validacion {
+  font-size: 0.82rem;
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  .contenedor-app {
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+  }
+}
